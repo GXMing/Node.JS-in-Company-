@@ -1,0 +1,13 @@
+{
+  "name": "webpack_dome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack" : "webpack --config webpack.config.js --progress --watch --display-reasons --display-modules --colors"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
