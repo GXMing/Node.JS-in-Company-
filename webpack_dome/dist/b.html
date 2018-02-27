@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <script type="text/javascript" src="js/main_bundle.js"></script>
+    <script type="text/javascript">
+        /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+/******/
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 3:
+/***/ (function(module, exports) {
+
+function hellow(){
+    alert("dd"+5535556)
+}
+
+// hellow()
+
+
+
+/***/ })
+
+/******/ });
+    </script>
+    <title>b</title>
+</head>
+<body>
+    <!-- 注释！！！ -->
+    <p>htmlWebpackPlugin.options.title  <br />
+    这里的htmlWebpackPlugin是指htmlWebpackPlugin插件<br />
+    不是var htmlWebpack=require("html-webpack-plugin")<br>
+    即htmlWebpackPlugin 不是指定变量不能修改</p>
+    
+    <!-- 可以为任意值 -->
+    任意值
+
+    
+        
+    
+        
+            <!-- 控制js加入 （main_bundle.js不加入） 注意if成功后内容没有括号包起-->
+            <script type="text/javascript" src="js/c.js"></script>
+        
+    
+        
+            <!-- 控制js加入 （main_bundle.js不加入） 注意if成功后内容没有括号包起-->
+            <script type="text/javascript" src="js/b.js"></script>
+        
+    
+        
+            <!-- 控制js加入 （main_bundle.js不加入） 注意if成功后内容没有括号包起-->
+            <script type="text/javascript" src="js/a.js"></script>
+        
+    
+
+
+    <!-- 数组遍历 -->
+    
+        publicPath : ""
+    
+        chunks : {"main_bundle":{"size":59,"entry":"js/main_bundle.js","hash":"65d930f5764729758249","css":[]},"c":{"size":40,"entry":"js/c.js","hash":"527dad92b95dbf705944","css":[]},"b":{"size":40,"entry":"js/b.js","hash":"539c4e3124dd2f48769b","css":[]},"a":{"size":32,"entry":"js/a.js","hash":"2cf68e34c135d9758e55","css":[]}}
+    
+        js : ["js/main_bundle.js","js/c.js","js/b.js","js/a.js"]
+    
+        css : []
+    
+        manifest : 
+    
+
+    
+        template : "C:\\Users\\liuyingqi\\Desktop\\chajian\\node\\webpack_dome\\node_modules\\html-webpack-plugin\\lib\\loader.js!C:\\Users\\liuyingqi\\Desktop\\chajian\\node\\webpack_dome\\index.html"
+    
+        filename : "b.html"
+    
+        hash : false
+    
+        inject : true
+    
+        compile : true
+    
+        favicon : false
+    
+        minify : false
+    
+        cache : true
+    
+        showErrors : true
+    
+        chunks : "all"
+    
+        excludeChunks : []
+    
+        title : "b"
+    
+        xhtml : false
+    
+        ccc : "任意值"
+    
+    <p>dddd</p> 
+    <!-- ////JSON对象有两个方法：stringify()和parse()。在最简单的情况下，这两个方法分别用于把JavaScript对象序列化为JSON字符串和把JSON字符串解析为原生JavaScript。
+    JSON.stringify() //将JSON数据转化为字符(JSON带有[])
+    JSON.parse()  //用于从字符串解析出json对象  (一串字符中提取JSON对象)
+    arr.toString()  //数组或其他转化成字符串，因此不带 [] -->
+<script type="text/javascript" src="js/main_bundle.js"></script><script type="text/javascript" src="js/c.js"></script><script type="text/javascript" src="js/b.js"></script><script type="text/javascript" src="js/a.js"></script></body>
+</html>
+

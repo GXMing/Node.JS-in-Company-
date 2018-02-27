@@ -1,6 +1,6 @@
 function hellow(){
-    alert(999999333)
+    alert("dd"+5535556)
 }
 
-hellow()
+// hellow()
 
