@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+</head>
+<div>
+    <em>需浏览器支持 script 标签的 type = module 属性</em><br />
+    <em>当 script 设为 type = module 会失去跨域特性，必须同源</em><br />
+    <p>需要请求模块，需要网络</p>
+</div>
+<body>
+    <script type="module" src="2.js"></script>
+    <script type="module">
+        // // 模块导入
+        // import getModuleName, { HttpTool, MathTool } from './Tools.js';
+        
+        // console.log("module name: " + getModuleName());
+
+        // // 解构小实例 注意传入的是数组，模块解构获取参数
+        // HttpTool.get(["//segmentfault.com", (url) => {
+        //     console.log(url);
+        // }]);
+
+        // // 扩展（反向）小实例 当然 js 本身就是不定参数的 玩玩而已
+        // HttpTool.post("//segmentfault.com", "hello", "segmentfault");
+
+        // console.log(MathTool.add(1, 2), MathTool.sub(1, 2));
+    </script>
+</body>
+</html>

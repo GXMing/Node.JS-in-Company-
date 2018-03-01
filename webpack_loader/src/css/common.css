@@ -1,0 +1,11 @@
+@import "./flex.css"
+
+body{
+    margin: 0;
+    background-color: green;
+}
+
+ul,li{
+    list-style: none;
+}
+

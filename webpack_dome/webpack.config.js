@@ -60,7 +60,8 @@ package.json 里的webpack 参数
 
 //变量引入html
 ///<script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.main_bundle.entry%>"></script>
-/*** 插件 html-webpack-plugin ***/
+///
+/*** 安装插件 html-webpack-plugin ***/
 /////html-webpack-plugin
 //template  //设置模板
 //
