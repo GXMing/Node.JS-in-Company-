@@ -1,0 +1,245 @@
+
+//- pug template.pug -o dist -P -w
+//- -P html代码不压缩
+//- -w 观察跟踪文件
+//- -o 指定路径
+//-     -w 跟踪文件不能改名？？？？？
+//- var name = "Gxming";
+
+//结构语法
+//标签
+//-1
+p #{name} 的pug
+
+//-2 【树状】
+ul
+    li itemA
+    li itemB
+    li itemC
+
+//-3 【内联】
+p: img
+p
+    img
+
+//-4
+= "\n"
+doctype
+//- doctype html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+
+//内容
+//-5
+= "\n"
+| 核心<strong>纯文本要用“|”不然不编译</strong>
+//-
+p
+    | 但它必须单独起一行。
+//-
+p 这实际上是最常见的情况，文本只需<br />要和标签名隔开一个空格即可
+
+
+//-6 嵌入大段文本
+p.
+    dfjidsjf
+//-
+script.
+  if (usingPug)
+    console.log('这是明智的选择。')
+  else
+    console.log('请用 Pug。')
+
+//属性
+//- = "\n" 编译出来的文件换行（不能行内注释）
+= "\n"  
+a(href = "./") 属性添加
+= "\n" 
+a(href = "./" class="did") 属性添加
+= "\n" 
+input(
+    type = "checkbox" 
+    name = "ddd"
+    checked
+)
+= "\n"
+
+//-长属性
+input(
+    data-json = {'dd':'ddi'}
+)
+
+//-【特殊字符】
+//-  input(class="ddd" (click)="play()")  //这样编译错误，因为(click)有括号会停止编译
+input(class="ddd" '(click)'="play()")
+input(class="ddd",(click)="play()")
+
+//-【布尔值】
+= "\n"
+input(type="checkbox" checked)
+input(type="checkbox" checked=false)
+input(type="checkbox" checked=true)
+input(type="checked" checked=true.toString())
+= "\n"
+
+//-【行内样式】
+div(style="top:0;left:0;")
+= "\n"
+
+
+//-【类和ID】
+= "\n"
+a.ddd
+= "\n"
+a#ddd
+= "\n"
+.ddd
+#ddd
+= "\n"
+
+//-标签嵌入(。。。。。。)
+p.
+    dddd#[strong ijiji]#[div idjif]
+//- 文本内容中加标签会乱
+//- p.
+//-     dfkodsfk
+//-     div.
+//-         djfi
+
+//- 【空格调整】(。。。。。。。)
+//- Pug 默认会去除一个标签前后的所有空格，而标签嵌入功能可以在需要嵌入的位置上处理前后空格
+p
+  | 如果我不用嵌入功能来书写，一些标签比如
+  strong strong
+  | 和
+  em em
+  | 可能会产生意外的结果。
+p.
+  如果用了嵌入，在 #[strong strong] 和 #[em em] 旁的空格就会让我舒服多了。
+
+
+//注释
+
+//单行注释
+//-单号注释（不会出现在编译）
+//
+    的附加地方
+    （快注释）
+
+
+//pug没有特殊注释
+<!--[if IE 8]>
+<html lang="en" class="lt-ie9">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+<!--<![endif]-->
+<p></p>
+
+
+////逻辑语法
+//-   【不输出的代码】
+//-   用 - 开始一段不直接进行输出的代码
+- for (var x = 0;x < 3;x++)
+  li item (li注意要有缩进)
+
+
+//-     【输出的代码】 即用bug的逻辑语法输出的输出的代码
+//- 　　用=开始一段带有输出的代码，它应该是可以被求值的一个JavaScript表达式。为安全起见，它将被HTML转义
+p
+  = '这个代码被 <转义> 了！'
+p= '这个代码被 <转义> 了！'
+
+
+//-     【不转义的输出代码】
+//- 　　用 != 开始一段不转义的，带有输出的代码。这将不会做任何转义，所以用于执行用户的输入将会不安全
+p
+  != '这段文字 <strong>没有></strong> 被转义！'
+p!= '这段文字<strong>没有></strong> 被转义！'
+
+
+
+
+//变量
+//-  用 - 或 #{} 输出变量
+-var title = "dddd"
+h1= title
+h1 #{title}
+
+    //-  转义的应用
+-var fff = "<strong>转义</strong>"
+p #{fff}
+p !{fff}
+p= fff
+p!= fff
+p = fff
+
+    //-  Pug 足够聪明来分辨到底哪里才是嵌入表达式的结束，所以不用担心表达式中有 }，也不需要额外的转义
+-var fffff = "{"
+p= fffff
+
+    //- 在 #{ 和 } 里面的代码也会被求值、转义，并最终嵌入到模板的渲染输出中
+-var s = "apd,这转换为大写"
+p= s.toUpperCase()  
+p #{s.toUpperCase()}
+
+    //-  如果需要表示一个 #{ 文本，可以转义它，也可以用嵌入功能来生成
+//- p 我要 #{sdfsdifsdf                //这样写编译错误
+p 我要 \#{sdfsdifsdf
+p 我要 #{'#{sdsdsdd'}
+//-     #{'#{'}      #{"直接写了变量在这然后输出"}
+
+
+
+
+
+
+//【属性变量】
+//-如果要在属性当中使用变量的话，需要进行如下操作
+-var url = "https:www.ninin"
+= "\n"
+a(href=url)
+= "\n"
+a(href=url+"字符串拼接")
+
+//-如果JavaScript运行时支持 ECMAScript 2015 模板字符串，还可以使用下列方式来简化属性值
+-var url = "dddd"
+-var url2 = "cccc"
+p(type="aaaa"+url+"bbb"+url2)
+p(type=`aaaa${url}bbb${url2}`)
+//-    上边是ES2015的字符串拼接
+
+//-    　　&attributes 语法可以将一个对象转化为一个元素的属性列表
+div.a(b="bb")&attributes({"c":"cc"})
+-var bc = {}
+-bc.c = "cc"
+div.a(b="bb")&attributes(bc)
+-bc.b = "bb"
+div.a&attributes(bc)
+
+
+////条件
+//- 【if else】
+- var Ta = {a : "dddd"}
+- var Tb = false
+#if-box
+    if Ta.a
+        p Ta.a 有内容为-#{Ta.a}
+        p Tb 不判断
+    else if Tb
+        p Ta.a 无内容
+        p Tb 为 ture
+    else
+        p Ta.a 无内容
+        p Tb 为false
+
+//- switch
+//- case 是 JavaScript 的 switch 指令的缩写，并且它接受如下的形式
+-var friends = 5
+case friends
+    when 0
+        p 000000
+    when 1
+        p 1111111
+    when 2
+        p 22222222
+    default
+        p 您有 #{friends} 个朋友
