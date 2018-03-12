@@ -1,0 +1,42 @@
+@charset "utf-8";
+.div a {
+  background-color: #fff;
+  opacity: 1;
+  left: 1;
+}
+/******************************************/
+div a {
+  display: inline;
+  background-image: url("app.js");
+}
+/******************************************/
+.abs:hover {
+  height: 200px;
+  width: 300px;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
+}
+.div a {
+  background-color: #fff;
+  opacity: 1;
+  left: 1;
+  -webkit-transition: ;
+  transition: ;
+}
+.div:hover {
+  color: #fff;
+  background-attachment: fixed;
+}
+.div {
+  height: 400px;
+}
+.div {
+  height: 400px;
+  background-image: url(c.png);
+}

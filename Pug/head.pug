@@ -1,0 +1,14 @@
+html
+    head
+        block head
+            //- 缩进的话是block 内的内容会被替换 不缩进是文件模板内容
+            script(src="1.js")
+            script(src="2.js")
+        script(src="3.js")
+    body
+        p 可以加入
+        block content
+            p 这个回被替换
+        p 不会被替换
+        block content2
+            p 默认是替换用append，prepend可以向后加入，向前加入不被替换
